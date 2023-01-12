@@ -1,15 +1,20 @@
-## Inleiding
-tekstplek 1
+# Ondersteuning in het gebruik van GWSW
 
 <style>
   .symbolSmall{width:20px;height:20px;margin-right:1em;vertical-align:middle}
   .symbol{width:30px;height:30px;margin-right:1em;vertical-align:middle}
 </style>
 
+stukje tekst over werkgroep
+
+tekstplek 1
 Verwijzing
 <a id="werkgroep"></a>
 [Werkgroep](#werkgroep) 
 
+# Inleiding
+
+Bladibla
 linkjes
  [data.gwsw.nl](https://data.gwsw.nl/). 
 
