@@ -116,6 +116,12 @@ pm
 
 # Stelsel
 
+## Schema Didactisch Stelsel 
+
+Presentatie met QGIS op basis van de voorbeeld-dataset op https://apps.gwsw.nl/doc/GwswDataset__DidacStelsel_v1.6.orox.ttl
+
+<img src="media/Schema didactisch stelsel.png" style="width:100%;height:100%" />
+
 pm
 
 ## Put
