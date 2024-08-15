@@ -79,6 +79,4 @@ In het netwerk kunnen hulpstukken als knooppunt voorkomen. Denk dan bijvoorbeeld
 In het HydX-formaat is voor deze knooppunten niet een apart type gereserveerd, daarom worden hulpstukken in de HydX-download gedefinieerd 
 als een geknevelde Inspectieput (code INS) met minimale afmetingen (1x1x1 mm).
 
-pm
-
 
