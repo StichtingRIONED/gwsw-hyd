@@ -55,8 +55,8 @@ Dit hoofdstuk beschrijft de werking van de HydX-download met GWSW-Apps.
 
 De basis voor deze applicaties vormen queries op https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd . 
 Deze queries lezen de relevante gegevens uit de GWSW-Datasets. 
-Om deze queries te kunnen lezen is enige kennis van SPARQL noodzakelijk.
-Inzicht in de werking van deze queries is noodzakelijk om de werking van de HydX-download in de basis te begrijpen. 
+Om deze queries te kunnen lezen is enige kennis van SPARQL nodig maar inzicht in de werking van deze queries is 
+wel noodzakelijk om de werking van de HydX-download in de basis te begrijpen. 
 Dit document licht alleen de aanvullende bewerkingen van de query-resultaten toe.
 
 ## Gegevens knooppunten
@@ -79,4 +79,14 @@ In het netwerk kunnen hulpstukken als knooppunt voorkomen. Denk dan bijvoorbeeld
 In het HydX-formaat is voor deze knooppunten niet een apart type gereserveerd, daarom worden hulpstukken in de HydX-download gedefinieerd 
 als een geknevelde Inspectieput (code INS) met minimale afmetingen (1x1x1 mm).
 
+### Niveau binnenonderkant
+Het HydX bevat in kolom KNP_BOK het niveau van de binnenonderkant knooppunt. Deze waarde wordt als volgt afgeleid:
+- Als de punt-geometrie 3 dimensies heeft: de Z-waarde uit de geometrie
+- Anders, als het knooppunt een put, bouwwerk of compartiment is: het gekoppelde maaiveldniveau verminderd met de knooppunt-hoogte
 
+### Omgaan met blinde en verdekte put
+De GWSW-types BlindePut en VerdektePut zijn in de dataset altijd extra (uitvoerings)typeringen. 
+Daarnaast is altijd het functionele type (Inspectieput, Overstortput, ...) in de dataset. 
+De blinde put wordt wel meegenomen in de queries, zie ook https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq . 
+Het type BlindePut wordt wel betrokken in de maaiveldschematisering, die wordt "Gekneveld". 
+Dat geldt niet voor verdekte putten omdat de mate van verdekking onbekend is.
