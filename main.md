@@ -96,7 +96,7 @@ Dat geldt niet voor verdekte putten omdat de mate van verdekking onbekend is.
 
 Zie ook de query op https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Leiding.rq 
 
-Het type Inzameling wordt op basis van het leidingtype afgeleid:
+Het **type Inzameling** wordt op basis van het leidingtype afgeleid:
 
 | Leidingtype                | Code | Opmerking                        |
 |----------------------------|------|----------------------------------|
@@ -108,7 +108,7 @@ Het type Inzameling wordt op basis van het leidingtype afgeleid:
 | VrijvervalTransportleiding | NVT  | Gebruik het supertype (20190430) |
 | OpenLeiding                | NVT  | Gebruik het supertype (20190430) |
 
-Het type Verbinding wordt op basis van het leidingtype afgeleid:
+Het **type Verbinding** wordt op basis van het leidingtype afgeleid:
 
 | Leidingtype                | Code | Opmerking                        |
 |----------------------------|------|----------------------------------|
