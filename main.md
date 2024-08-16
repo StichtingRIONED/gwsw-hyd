@@ -75,7 +75,7 @@ Het bergend oppervlak werd in eerdere versies zonder bewerking overgenomen van h
 Vanaf 20240814 wordt het bergend oppervlak evenredig verdeeld over het aantal compartimenten in het compositie-object.
 
 ### Gegevens hulpstukken
-In het netwerk kunnen hulpstukken als knooppunt voorkomen. Denk dan bijvoorbeeld aan verbindingsstukken, bochtstukken en verloopstukken.
+In het netwerk kunnen hulpstukken als knooppunt voorkomen. Denk dan bijvoorbeeld aan verbindingsstukken (bochtstukken, verloopstukken) of afsluitstukken.
 In het HydX-formaat is voor deze knooppunten niet een apart type gereserveerd, daarom worden hulpstukken in de HydX-download gedefinieerd 
 als een geknevelde Inspectieput (code INS) met minimale afmetingen (1x1x1 mm).
 
@@ -86,7 +86,7 @@ Het HydX bevat in kolom KNP_BOK het niveau van de binnenonderkant knooppunt. Dez
 
 ### Omgaan met blinde en verdekte put
 De GWSW-types BlindePut en VerdektePut zijn in de dataset altijd extra (uitvoerings)typeringen. 
-Daarnaast is altijd het functionele type (Inspectieput, Overstortput, ...) in de dataset. 
+Daarnaast is altijd het functionele type (Inspectieput, Overstortput, ...) in de dataset aanwezig. 
 De blinde put wordt wel meegenomen in de queries, zie ook https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq . 
 Het type BlindePut wordt wel betrokken in de maaiveldschematisering, die wordt "Gekneveld". 
 Dat geldt niet voor verdekte putten omdat de mate van verdekking onbekend is.
