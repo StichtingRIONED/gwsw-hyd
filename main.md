@@ -75,7 +75,8 @@ Het bergend oppervlak werd in eerdere versies zonder bewerking overgenomen van h
 Vanaf 20240814 wordt het bergend oppervlak evenredig verdeeld over het aantal compartimenten in het compositie-object.
 
 ### Gegevens hulpstukken
-In het netwerk kunnen hulpstukken als knooppunt voorkomen. Denk dan bijvoorbeeld aan verbindingsstukken (bochtstukken, verloopstukken) of afsluitstukken.
+In het netwerk kunnen aansluitpunten en hulpstukken als knooppunt voorkomen. 
+Denk dan bijvoorbeeld aan uitlaatpunten, verbindingsstukken (bochtstukken, verloopstukken) of afsluitstukken.
 In het HydX-formaat is voor deze knooppunten niet een apart type gereserveerd, daarom worden hulpstukken in de HydX-download gedefinieerd 
 als een geknevelde Inspectieput (code INS) met minimale afmetingen (1x1x1 mm).
 
@@ -90,3 +91,33 @@ Daarnaast is altijd het functionele type (Inspectieput, Overstortput, ...) in de
 De blinde put wordt wel meegenomen in de queries, zie ook https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq . 
 Het type BlindePut wordt wel betrokken in de maaiveldschematisering, die wordt "Gekneveld". 
 Dat geldt niet voor verdekte putten omdat de mate van verdekking onbekend is.
+
+## Gegevens verbindingen
+
+Zie ook de query op https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Leiding.rq 
+
+Het type Inzameling wordt op basis van het leidingtype afgeleid:
+
+| Leidingtype                | Code | Opmerking                        |
+|----------------------------|------|----------------------------------|
+| GemengdRiool               | GMD  |                                  |
+| Overstortleiding           | HWA  |                                  |
+| Vuilwaterriool             | DWA  |                                  |
+| Hemelwaterriool            | HWA  |                                  |
+| Infiltratieriool           | HWA  | (20190430)                       |
+| VrijvervalTransportleiding | NVT  | Gebruik het supertype (20190430) |
+| OpenLeiding                | NVT  | Gebruik het supertype (20190430) |
+
+Het type Verbinding wordt op basis van het leidingtype afgeleid:
+
+| Leidingtype                | Code | Opmerking                        |
+|----------------------------|------|----------------------------------|
+| GemengdRiool               | GSL  |                                  |
+| Overstortleiding           | GSL  |                                  |
+| Vuilwaterriool             | GSL  |                                  |
+| Hemelwaterriool            | GSL  |                                  |
+| Infiltratieriool           | ITR  | (20190430)                       |
+| DIT_riool                  | ITR  | (20240816)                       |
+| VrijvervalTransportleiding | GSL  | Gebruik het supertype (20190430) |
+| OpenLeiding                | OPL  | Gebruik het supertype (20190430) |
+
