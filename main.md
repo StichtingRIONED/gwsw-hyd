@@ -89,8 +89,8 @@ Het HydX bevat in kolom KNP_BOK het niveau van de binnenonderkant knooppunt. Dez
 De GWSW-types BlindePut en VerdektePut zijn in de dataset altijd extra (uitvoerings)typeringen. 
 Daarnaast is altijd het functionele type (Inspectieput, Overstortput, ...) in de dataset aanwezig. 
 De blinde put wordt wel meegenomen in de queries, zie ook https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq . 
-Het type BlindePut wordt wel betrokken in de maaiveldschematisering, die wordt "Gekneveld". 
-Dat geldt niet voor verdekte putten omdat de mate van verdekking onbekend is.
+Het type BlindePut heeft effect op de maaiveldschematisering, die wordt "Gekneveld". 
+Dat geldt niet voor verdekte putten omdat de mate (massa) van verdekking onbekend is.
 
 ## Gegevens verbindingen
 
@@ -98,7 +98,7 @@ Zie ook de query op https://github.com/StichtingRIONED/gwsw_queries/blob/main/ap
 
 Het **type Inzameling** wordt op basis van het leidingtype afgeleid:
 
-| Leidingtype                | Code | Opmerking                        |
+| URI Leidingtype            | Code | Opmerking                        |
 |----------------------------|------|----------------------------------|
 | GemengdRiool               | GMD  |                                  |
 | Overstortleiding           | HWA  |                                  |
@@ -110,7 +110,7 @@ Het **type Inzameling** wordt op basis van het leidingtype afgeleid:
 
 Het **type Verbinding** wordt op basis van het leidingtype afgeleid:
 
-| Leidingtype                | Code | Opmerking                        |
+| URI Leidingtype            | Code | Opmerking                        |
 |----------------------------|------|----------------------------------|
 | GemengdRiool               | GSL  |                                  |
 | Overstortleiding           | GSL  |                                  |
