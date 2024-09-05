@@ -1,2 +1,2 @@
-# GWSW
-Website ter ondersteuning in het gebuik van GWSW
+# GWSW-Hyd
+Datamodel GWSW-Hyd
