@@ -69,15 +69,15 @@ hydraulische berekeningen uit te wisselen. Het formaat is flexibel zodat het mog
 
 ## Netwerk
 In het GWSW-Hyd wordt uitgegaan van een netwerkconcept, waarin onderlinge relaties en definities staan beschreven. Een netwerk bestaat uit knooppunten en verbindingen, die allen zijn voorzien van een unieke ID (UNI_IDE). In KNOOPPUNT.CSV staat de fysieke ligging en kenmerken van knooppunten beschreven. In VERBINDING.CSV staat
-beschreven welke knooppunten op welke manier zijn verbonden en welke condities daaraan zijn verbonden. Meervoudige verbindingen krijgen per verbinding een unieke ID. Knooppunten en verbindingen hebben unieke eigenschappen die in andere .CSV bestanden worden toegekend aan de unieke ID (zie het [Voorbeeld Knooppunt](#knooppunt) of [Voorbeeld Verbinding](#verbinding) ).
+beschreven welke knooppunten op welke manier zijn verbonden en welke condities daaraan zijn verbonden. Meervoudige verbindingen krijgen per verbinding een unieke ID. Knooppunten en verbindingen hebben unieke eigenschappen die in andere .CSV bestanden worden toegekend aan de unieke ID (zie het [Voorbeeld Knooppunt](#knooppunt) of [Voorbeeld Verbinding](#verbinding)).
 
 ## Kunstwerken
 Een kunstwerk kan een knooppunt of een verbinding zijn. Binnen het GWSW-Hyd wordt voorgesorteerd op de meest gangbare kunstwerken in de riolering, te weten pomp, overstortdrempel, doorlaat en uitlaat. De domeintabellen bieden ruimte voor uitbreidingen hierop. In KNOOPPUNT.CSV wordt in het veld KNP_TYP aangegeven als het om een
 uitlaat gaat. In VERBINDING.CSV wordt in het veld VRB_TYP aangegeven om welk kunstwerk (pomp, overstort, doorlaat) het gaat. Een gemaalpomp, een doorlaat en een overstortdrempel zijn altijd een verbinding. Een uitlaat is altijd een knooppunt.
 
-In KUNSTWERK.CSV wordt per unieke ID in het veld KWK_TYP opgenomen welk type kunstwerk het is. Vervolgens moet er per type kunstwerk een aantal verplichte waarden worden gedefinieerd (zie de [Voorbeelden bij Kunstwerken](#kunstwerken) ). Zo heeft een pomp o.a. een aan- en afslagpeil en heeft een overstortdrempel o.a. een drempelhoogte en -breedte. In KUNSTWERK.CSV kunnen ook specifieke Qh-relaties worden toegekend. Dit gebeurt in de velden QDH_NIV en QDH_DEB, waar de waarden getabuleerd kunnen worden opgegeven, met spatie als separator.
+In KUNSTWERK.CSV wordt per unieke ID in het veld KWK_TYP opgenomen welk type kunstwerk het is. Vervolgens moet er per type kunstwerk een aantal verplichte waarden worden gedefinieerd (zie de [Voorbeelden bij Kunstwerken](#kunstwerken)). Zo heeft een pomp o.a. een aan- en afslagpeil en heeft een overstortdrempel o.a. een drempelhoogte en -breedte. In KUNSTWERK.CSV kunnen ook specifieke Qh-relaties worden toegekend. Dit gebeurt in de velden QDH_NIV en QDH_DEB, waar de waarden getabuleerd kunnen worden opgegeven, met spatie als separator.
 
-Met het netwerkconcept is het mogelijk om een compartimenteerde put op te nemen in het uitwisselformaat. Ieder compartiment krijgt een unieke ID, en daardoor ook eigen kenmerken toegekend. De verbinding tussen de compartimenten wordt ook gedefinieerd (zie het [Voorbeeld bij Gecompartimenteerde put](#compartiment) ).
+Met het netwerkconcept is het mogelijk om een compartimenteerde put op te nemen in het uitwisselformaat. Ieder compartiment krijgt een unieke ID, en daardoor ook eigen kenmerken toegekend. De verbinding tussen de compartimenten wordt ook gedefinieerd (zie het [Voorbeeld bij Gecompartimenteerde put](#compartiment)).
 
 ## Belasting
 De belasting op een rioleringsstelsel heeft een neerslagcomponent (RWA) en afvalwatercomponent (DWA). Dit kan als directe belasting of als indirecte belasting (ook wel lateraal debiet genoemd) aan de schematisatie worden toegekend. 
@@ -85,7 +85,7 @@ De belasting op een rioleringsstelsel heeft een neerslagcomponent (RWA) en afval
 ### Neerslag
 De directe neerslagcomponent wordt bepaald door het aangesloten oppervlak dat is opgenomen in OPPERVLAK.CSV gekoppeld aan een neerslag-afvoerconcept. In GWSW.hydx is het NWRW-inloopmodel als 0D neerslag-afvoerconcept standaard opgenomen. Andere concepten kunnen in de toekomst worden toegevoegd, maar zullen vermoedelijk in het
 2D-terreinmodel worden opgelost. In OPPERVLAK.CSV wordt per unieke ID (knooppunt of verbinding) aangegeven hoeveel vierkante meter (AFV_OPP) er via welk concept (AFV_DEF) met welke kenmerken (AFV_IDE) op afstroomt. Per unieke ID kunnen meerdere neerslagafvoerconcepten en specifieke kenmerken worden opgenomen door meerdere records van dat unieke ID op te nemen
-(zie het [Voorbeeld bij Oppervlak](#oppervlak) ).
+(zie het [Voorbeeld bij Oppervlak](#oppervlak)).
 
 ### Vuilwater en lateraal debiet
 De afvalwatercomponent wordt bepaald door belasting op een unieke ID (knooppunten en verbindingen) vanuit (directe) pandaansluitingen en (indirecte) laterale debieten (Paragraaf 4.5). In DEBIET.CSV wordt per unieke ID in het veld DEB_TYP aangegeven wat het debiettype is. Dit kan alleen vuilwater zijn (VWD) of een lateraal debiet met
@@ -98,7 +98,7 @@ In het veld VER_IDE van DEBIET.CSV wordt verwezen naar de verloopdefinitie die i
 - CST – Constant debiet per uur met variabel dagvolume
 - VAR – Variabel debiet per uur met variabel dagvolume
 
-Zie het [Voorbeeld bij Vuilwater en lateraal debiet](#dwa) ).
+Zie het [Voorbeeld bij Vuilwater en Lateraal debiet](#dwa).
 
 ## Meta-informatie
 Het bestand META.CSV bevat alle relevante meta-informatie behorende bij het uit te wisselen GWSW.hydx. Denk hierbij aan het aantal .CSV bestanden dat bij het GWSW.hydx behoort, zodat de volledigheid te controleren is, maar ook aan de vermelding van de opdrachtgever, de uitvoerende, enzovoort
@@ -106,7 +106,7 @@ Het bestand META.CSV bevat alle relevante meta-informatie behorende bij het uit 
 ## Extra ondersteunende definities
 Een verbinding kan een leiding of kunstwerk zijn. Dit wordt gedefinieerd in het veld VRB_TYP. Afhankelijk hiervan kunnen er losse profieldefinities (in PROFIEL.CSV voor VRB_TYP=GSL, OPL, ITR of DRL) en vervolgens eventueel ook definities voor infiltratie (in ITOBJECT.CSV voor VRB_TYP=ITR) worden opgegeven.
 
-In PROFIEL.CSV wordt in veld PRO_VRM gedefinieerd welke vorm het profiel heeft. Dit kunnen vaste vormen zijn, zoals rechthoekig of rond. Dit kunnen ook afwijkende vormen zijn. Voor profielen in open water dient gekozen te worden voor XY-profielen (XYP). Voor gesloten profielen dient gekozen te worden voor ‘tabulated’ profielen (TAB). In de bijbehorende waardevelden (TAB_BRE en TAB_HGT) worden de waarden opgegeven met een spatie als separator. Zie het [Voorbeeld bij Profiel](#profiel) ).
+In PROFIEL.CSV wordt in veld PRO_VRM gedefinieerd welke vorm het profiel heeft. Dit kunnen vaste vormen zijn, zoals rechthoekig of rond. Dit kunnen ook afwijkende vormen zijn. Voor profielen in open water dient gekozen te worden voor XY-profielen (XYP). Voor gesloten profielen dient gekozen te worden voor ‘tabulated’ profielen (TAB). In de bijbehorende waardevelden (TAB_BRE en TAB_HGT) worden de waarden opgegeven met een spatie als separator. Zie het [Voorbeeld bij Profiel](#profiel)).
 
 # Voorbeelden
 <a id="knooppunt"></a>
@@ -116,7 +116,7 @@ In PROFIEL.CSV wordt in veld PRO_VRM gedefinieerd welke vorm het profiel heeft. 
 Om een voorbeeld van KNOOPPUNT.CSV en VERBINDING.CSV te geven wordt het onderstaande ‘stelsel’ gebruikt (Figuur 3):
 
 
-<img src="media/Voorbeeldstelsel_A.jpg" style="width:100%;height:50%" />
+<img src="media/Voorbeeldstelsel_A.jpg" style="width:50%;height:50%" />
 
 *Figuur 3 - Voorbeeldstelsel A*  
 
@@ -187,7 +187,7 @@ Let op: Het is aan de modelleur om ervoor zorg te dragen dat oppervlak op de ‘
 
 <a id="dwa"></a>
 ## Vuilwater en lateraal debiet
-Om een voorbeeld van DEBIET.CSV (Tabel 9) en VERLOOP.CSV (Tabel 10) te geven wordt ‘Voorbeeldstelsel A’ gebruikt (Figuur 3). Vuilwater (VWD) of lateraal debiet met afvalwater en/of oppervlak (LAT) kan worden toegekend aan knooppunten en aan verbindingen. Bij een lateraal debiet met oppervlak worden geen neerslag-afvoerprocessen beschreven (met andere woorden: Alle neerslag dat op het oppervlak landt, komt direct als debiet op de UNI_IDE).
+Om een voorbeeld van DEBIET.CSV (Tabel 9) en VERLOOP.CSV (Tabel 10) te geven wordt ‘Voorbeeldstelsel A’ gebruikt (Figuur 3). Vuilwater (VWD) of lateraal debiet met afvalwater en/of oppervlak (LAT) kan worden toegekend aan knooppunten en aan verbindingen. Bij een lateraal debiet met oppervlak worden geen neerslag-afvoerprocessen beschreven. Met andere woorden: Alle neerslag dat op het oppervlak landt, komt direct als debiet op de UNI_IDE.
 
 *Tabel 9 - DEBIET.CSV*  
 <img src="media/tabel9_debiet.jpg" style="width:50%;height:50%" />
@@ -215,7 +215,8 @@ Om de implementatie van het GWSW-Hyd en het .hydx technisch te faciliteren, stel
 Het testbestand beschrijft een combinatie van fictieve rioolstelsels met daarin een diversiteit aan hydraulisch relevante constructies en belastingen op het stelsel. Met het samenstellen van het testbestand is enkel het doel van het testen van gegevensuitwisseling conform het .hydx uitwisselformaat beschouwd. Het testbestand staat schematisch
 weergegeven in Figuur 5 en staat als orox bestand op https://apps.gwsw.nl/doc/GwswDataset__DidacStelsel_v1.6.orox.ttl
 
-<img src="media/Schema didactisch stelsel.png" style="width:80%;height:100%" />
+<img src="media/Schema didactisch stelsel.png" style="width:80%;height:50%" />
+
 *Figuur 5 - Schematische weergave van het testbestand* 
 
 
@@ -235,13 +236,13 @@ In META.csv staat metadata opgenomen behorend bij het testbestand. Hieronder sta
 stelselcategorie opgegeven.
 
 ### Knooppunten
-Het testbestand bestaat uit 84 knooppunten. Dit zijn 76 putten, waarvan er 1 infiltratieput is (knp67/7005), 3 een uitlaat zijn (Tabel 1) en 8 gecompartimenteerd zijn (Tabel 2). Elk compartiment is een apart knooppunt. Van elk knooppunt staan in KNOOPPUNT.CSV de geometrie, dimensies en materialen beschreven.
+Het testbestand bestaat uit 84 knooppunten. Dit zijn 76 putten, waarvan er 1 infiltratieput is (knp67/7005), 3 een uitlaat zijn (Tabel 12) en 8 gecompartimenteerd zijn (Tabel 13). Elk compartiment is een apart knooppunt. Van elk knooppunt staan in KNOOPPUNT.CSV de geometrie, dimensies en materialen beschreven.
 
 *Tabel 12 - Uitlaten*  
-<img src="media/tabel12_uitlaten.jpg" style="width:80%;height:50%" />
+<img src="media/tabel12_uitlaten.jpg" style="width:40%;height:50%" />
 
 *Tabel 13 - Gecompartimenteerde putten*  
-<img src="media/tabel13_cmp.jpg" style="width:80%;height:50%" />
+<img src="media/tabel13_cmp.jpg" style="width:40%;height:50%" />
 
 ### Verbindingen
 Het testbestand bestaat uit 96 verbindingen, waaronder 75 gesloten leidingen (gemengd, vuilwater en hemelwater), 1 open water verbinding (lei79), 4 IT-leidingen (lei75, lei76, lei77 en lei78), 8 pompen, 2 doorlaten en 6 overstortdrempels. Op één locatie is er dubbele verbinding tussen twee putten (pmp93 en pmp94). Van elke verbinding staat in VERBINDING.CSV
@@ -251,19 +252,19 @@ beschreven tussen welke knooppunten deze is en wat voor een verbinding dit is, i
 Sommige knooppunten en verbindingen zijn kunstwerken. De kunstwerken staan beschreven in KUNSTWERK.CSV. Het testbestand bevat de volgende uitlaten (Tabel 14), doorlaten (Tabel 15), overstorten (Tabel 16) en pompen (Tabel 17):
 
 *Tabel 14 - Uitlaten*  
-<img src="media/tabel14_uitlaten.jpg" style="width:80%;height:50%" />
+<img src="media/tabel14_uitlaten.jpg" style="width:40%;height:50%" />
 
 *Tabel 15 - Doorlaten*  
-<img src="media/tabel15_doorlaten.jpg" style="width:80%;height:50%" />
+<img src="media/tabel15_doorlaten.jpg" style="width:60%;height:50%" />
 
 *Tabel 16 - Overstorten*  
-<img src="media/tabel16_overstorten.jpg" style="width:80%;height:50%" />
+<img src="media/tabel16_overstorten.jpg" style="width:60%;height:50%" />
 
 *Tabel 17 - Pompen*  
 <img src="media/tabel17_pompen.jpg" style="width:80%;height:50%" />
 
-Eén doorlaat (drl97) is begrenst met een maximale capaciteit. Één overstort (ovs83) heeft een maximaal overstortende
-straal. Één pomp (pmp89) voert conform een Qh-relatie af. De afvoer van één pomp (pmp90) wordt bepaald door de
+Eén doorlaat (drl97) is begrenst met een maximale capaciteit. Eén overstort (ovs83) heeft een maximaal overstortende
+straal. Eén pomp (pmp89) voert conform een Qh-relatie af. De afvoer van één pomp (pmp90) wordt bepaald door de
 bovenstroomse waterstand.
 
 ### Profiel
@@ -277,9 +278,9 @@ bevat het testbestand ook een aantal afwijkende profielen (Tabel 18).
 Sommige knooppunten en verbindingen zijn infiltratieobjecten. Dan staat in het veld ITO_IDE een verwijzing naar de infiltratiedefinitie. De infiltratiedefinitie staat beschreven in ITOBJECT.CSV (Tabel 19).
 
 *Tabel 19 - Infiltratiedefinities*  
-<img src="media/tabel19_it.jpg" style="width:80%;height:50%" />
+<img src="media/tabel19_it.jpg" style="width:40%;height:50%" />
 
-Van de verbindingen zijn lei75, 76, 77 en 78 infiltratieleidingen, met infiltratiedefinitie IT1.
+Van de verbindingen zijn lei75, lei76, lei77 en lei78 infiltratieleidingen, met infiltratiedefinitie IT1.
 Van de knooppunten is knp67 (put 07005) een infiltratieput, met infiltratiedefinitie IT2.
 
 ### Belasting
@@ -289,12 +290,13 @@ In het testbestand ontvangen 6 knooppunten een belasting met vuilwater (VWD), wa
 Er zijn 3 objecten, die een lateraal debiet ontvangen, waarvan er 2 (knp10 en lei4) een eigen verloop hebben en 1 (knp11) wordt bepaald door het aangesloten oppervlak (Tabel 20).
 
 *Tabel 20 - Lateraal debiet*  
-<img src="media/tabel20_lateraal.jpg" style="width:80%;height:50%" />
+<img src="media/tabel20_lateraal.jpg" style="width:40%;height:50%" />
 
 ## Schematisatie in detail 
 In Figuur 6 staat aangegeven welke delen van de schematisatie in meer detail worden getoond in deze paragraaf.
 
 <img src="media/figuur6_detail" style="width:80%;height:100%" />
+
 *Figuur 6 - Onderdelen van de schematisatie die in meer detail worden getoond* 
 
 PM
