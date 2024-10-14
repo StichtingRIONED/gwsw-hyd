@@ -296,11 +296,37 @@ Er zijn 3 objecten, die een lateraal debiet ontvangen, waarvan er 2 (knp10 en le
 ## Schematisatie in detail 
 In Figuur 6 staat aangegeven welke delen van de schematisatie in meer detail worden getoond in deze paragraaf.
 
-<img src="media/figuur6_detail" style="width:80%;height:100%" />
+<img src="media/figuur6_detail.jpg" style="width:80%;height:100%" />
 
 *Figuur 6 - Onderdelen van de schematisatie die in meer detail worden getoond* 
 
-PM
+### Detail A
+In detail A is een randvoorziening te zien, die via put 04006 (knp43) met de rest van het stelsel (niet te zien) is verbonden. Vanuit put 04006 stroomt het water via lei66 in het eerste compartiment (knp57) van de gecompartimenteerde put 10001 in. Daar gaat het via de overstortdrempel (ovs85) naar het andere compartiment (knp79) van put 10001. Van daar stroomt het de bergbezinkleiding in (lei80, knp68, lei81) en komt het uit in het eerste compartiment (knp69) van put 10003. Via de overstortdrempel (ovs87) komt het water in het andere compartiment (knp70) van put 10003. Vanuit daar stroomt het water via lei79 naar de uitlaat (knp84/put 10003U), want de rand van het model is. De groene sterren geven aan waar de kunstwerken zitten, die zijn beschreven in KUNSTWERK.CSV.
+
+<img src="media/figuur7_detaila.jpg" style="width:80%;height:100%" />
+
+*Figuur 7 - Detail A* 
+
+### Detail B
+In detail B zijn twee gecompartimenteerde putten te zien, waarvan de ene (01009) een verbinding tussen de compartimenten heeft in de vorm van een overstortdrempel (ovs83) en de andere (06005) een verbinding tussen de compartimenten heeft in de vorm van een doorlaat (drl96). Tussen put 06001 (knp75) en put 01008 (knp7) zitten twee verbindingen. Beide zijn pompen (pmp93 en pmp94). De groene sterren geven aan waar de kunstwerken zitten, die zijn beschreven in KUNSTWERK.CSV.
+
+<img src="media/figuur8_detailb.jpg" style="width:80%;height:100%" />
+
+*Figuur 8 - Detail B* 
+
+### Detail C
+In detail C zijn twee gecompartimenteerde putten te zien, waarvan de ene (02001) een verbinding tussen de compartimenten heeft in de vorm van een overstortdrempel (ovs82) en de andere (02002) een verbinding tussen de compartimenten heeft in de vorm van een doorlaat (drl97). Tussen put 02001 en put 01016 (knp15) zitten twee verbindingen. De ene verbinding is een pomp (pmp88) welke het ene compartiment (knp72) van put 02001 leegpompt naar put 01016 (knp15). De andere verbinding is een leiding (lei63) die tussen het andere compartiment (knp54) van put 02001 en put 01016 (knp15) ligt. De groene sterren geven aan waar de kunstwerken zitten, die zijn beschreven in KUNSTWERK.CSV.
+
+<img src="media/figuur9_detailc.jpg" style="width:80%;height:100%" />
+
+*Figuur 9 - Detail C* 
+
+### Detail D
+In detail D zijn twee gecompartimenteerde putten te zien (03004 en 09001), met beide een verbinding tussen de compartimenten in de vorm van een overstortdrempel (ovs84 en ovs86). Er zijn twee pompen (pmp89 en pmp91) die beide verbonden zijn met hetzelfde compartiment (knp77) van put 09001. De groene sterren geven aan waar de kunstwerken zitten, die zijn beschreven in KUNSTWERK.CSV.
+
+<img src="media/figuur10_detaild.jpg" style="width:80%;height:100%" />
+
+*Figuur 10 - Detail D* 
 
 # HydX-download
 
