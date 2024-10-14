@@ -209,7 +209,7 @@ In PROFIEL.CSV zijn de standaardvormen van leidingprofielen reeds opgenomen. Daa
 # Testbestand
 
 ## Inleiding
-Om de implementatie van het GWSW-Hyd en het .hydx technisch te faciliteren, stelt Stichting RIONED een testbestand beschikbaar. Het testbestand volgt het gegevensmodel GWSW-Hyd. In dit testbestand zijn alle velden die voorkomen in het .hydx uitwisselformaat tenminste één keer voorzien van een waarde en worden alle mogelijke domeinwaarden tenminste één keer toegepast. Daarmee is dit testbestand geschikt om software te testen op conformiteit aan het uitwisselformaat. In deze paragraaf staat de opbouw van het testbestand beschreven.
+Om de implementatie van het GWSW-Hyd en het .hydx technisch te faciliteren stelt Stichting RIONED een testbestand beschikbaar. Het testbestand volgt het gegevensmodel GWSW-Hyd. In dit testbestand zijn alle velden die voorkomen in het .hydx uitwisselformaat tenminste één keer voorzien van een waarde en worden alle mogelijke domeinwaarden tenminste één keer toegepast. Daarmee is dit testbestand geschikt om software te testen op conformiteit aan het uitwisselformaat. In deze paragraaf staat de opbouw van het testbestand beschreven.
 
 ## Globale opbouw
 
@@ -253,10 +253,10 @@ beschreven tussen welke knooppunten deze is en wat voor een verbinding dit is, i
 Sommige knooppunten en verbindingen zijn kunstwerken. De kunstwerken staan beschreven in KUNSTWERK.CSV. Het testbestand bevat de volgende uitlaten (Tabel 14), doorlaten (Tabel 15), overstorten (Tabel 16) en pompen (Tabel 17):
 
 *Tabel 14 - Uitlaten*  
-<img src="media/tabel14_uitlaten.jpg" style="width:25%;height:25%" />
+<img src="media/tabel14_uitlaten.jpg" style="width:15%;height:15%" />
 
 *Tabel 15 - Doorlaten*  
-<img src="media/tabel15_doorlaten.jpg" style="width:50%;height:40%" />
+<img src="media/tabel15_doorlaten.jpg" style="width:25%;height:15%" />
 
 *Tabel 16 - Overstorten*  
 <img src="media/tabel16_overstorten.jpg" style="width:50%;height:50%" />
@@ -294,7 +294,7 @@ Er zijn 3 objecten, die een lateraal debiet ontvangen, waarvan er 2 (knp10 en le
 <img src="media/tabel20_lateraal.jpg" style="width:40%;height:50%" />
 
 ## Schematisatie in detail 
-In Figuur 6 staat aangegeven welke delen van de schematisatie in meer detail worden getoond in deze paragraaf.
+In Figuur 6 staat aangegeven welke delen van de schematisatie in deze paragraaf in meer detail worden getoond.
 
 <img src="media/figuur6_detail.jpg" style="width:80%;height:100%" />
 
@@ -303,75 +303,74 @@ In Figuur 6 staat aangegeven welke delen van de schematisatie in meer detail wor
 ### Detail A
 In detail A is een randvoorziening te zien, die via put 04006 (knp43) met de rest van het stelsel (niet te zien) is verbonden. Vanuit put 04006 stroomt het water via lei66 in het eerste compartiment (knp57) van de gecompartimenteerde put 10001 in. Daar gaat het via de overstortdrempel (ovs85) naar het andere compartiment (knp79) van put 10001. Van daar stroomt het de bergbezinkleiding in (lei80, knp68, lei81) en komt het uit in het eerste compartiment (knp69) van put 10003. Via de overstortdrempel (ovs87) komt het water in het andere compartiment (knp70) van put 10003. Vanuit daar stroomt het water via lei79 naar de uitlaat (knp84/put 10003U), want de rand van het model is. De groene sterren geven aan waar de kunstwerken zitten, die zijn beschreven in KUNSTWERK.CSV.
 
-<img src="media/figuur7_detaila.jpg" style="width:80%;height:100%" />
+<img src="media/figuur7_detaila.jpg" style="width:80%;height:80%" />
 
 *Figuur 7 - Detail A* 
 
 ### Detail B
 In detail B zijn twee gecompartimenteerde putten te zien, waarvan de ene (01009) een verbinding tussen de compartimenten heeft in de vorm van een overstortdrempel (ovs83) en de andere (06005) een verbinding tussen de compartimenten heeft in de vorm van een doorlaat (drl96). Tussen put 06001 (knp75) en put 01008 (knp7) zitten twee verbindingen. Beide zijn pompen (pmp93 en pmp94). De groene sterren geven aan waar de kunstwerken zitten, die zijn beschreven in KUNSTWERK.CSV.
 
-<img src="media/figuur8_detailb.jpg" style="width:80%;height:100%" />
+<img src="media/figuur8_detailb.jpg" style="width:80%;height:80%" />
 
 *Figuur 8 - Detail B* 
 
 ### Detail C
 In detail C zijn twee gecompartimenteerde putten te zien, waarvan de ene (02001) een verbinding tussen de compartimenten heeft in de vorm van een overstortdrempel (ovs82) en de andere (02002) een verbinding tussen de compartimenten heeft in de vorm van een doorlaat (drl97). Tussen put 02001 en put 01016 (knp15) zitten twee verbindingen. De ene verbinding is een pomp (pmp88) welke het ene compartiment (knp72) van put 02001 leegpompt naar put 01016 (knp15). De andere verbinding is een leiding (lei63) die tussen het andere compartiment (knp54) van put 02001 en put 01016 (knp15) ligt. De groene sterren geven aan waar de kunstwerken zitten, die zijn beschreven in KUNSTWERK.CSV.
 
-<img src="media/figuur9_detailc.jpg" style="width:80%;height:100%" />
+<img src="media/figuur9_detailc.jpg" style="width:80%;height:80%" />
 
 *Figuur 9 - Detail C* 
 
 ### Detail D
 In detail D zijn twee gecompartimenteerde putten te zien (03004 en 09001), met beide een verbinding tussen de compartimenten in de vorm van een overstortdrempel (ovs84 en ovs86). Er zijn twee pompen (pmp89 en pmp91) die beide verbonden zijn met hetzelfde compartiment (knp77) van put 09001. De groene sterren geven aan waar de kunstwerken zitten, die zijn beschreven in KUNSTWERK.CSV.
 
-<img src="media/figuur10_detaild.jpg" style="width:80%;height:100%" />
+<img src="media/figuur10_detaild.jpg" style="width:80%;height:80%" />
 
 *Figuur 10 - Detail D* 
 
 # HydX-download
 
-Dit hoofdstuk beschrijft de werking van de HydX-download met GWSW-Apps.
+Deze paragraaf beschrijft de werking van de HydX-download met GWSW-Apps.
 
-De basis voor deze applicaties vormen queries op https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd . 
+De basis voor deze applicaties vormen de queries op https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd . 
 Deze queries lezen de relevante gegevens uit de GWSW-Datasets. 
-Om deze queries te kunnen lezen is enige kennis van SPARQL nodig maar inzicht in de werking van deze queries is 
-wel noodzakelijk om de werking van de HydX-download in de basis te begrijpen. 
-Dit document licht alleen de aanvullende bewerkingen van de query-resultaten toe.
+Om deze SPARQL-queries (met extensie .rq) te kunnen lezen is enige kennis van SPARQL nodig. Inzicht in de werking van deze queries is 
+noodzakelijk om de werking van de HydX-download in de basis te begrijpen. 
+Deze paragraaf licht alleen de aanvullende bewerkingen van de query-resultaten toe.
 
-## Gegevens knooppunten
+## Knooppunten
 Zie ook de query op https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq 
 
-### Gegevens compartimenten
-Compartimenten worden als knooppunten meegenomen, voor elk compartiment in de dataset zijn gegevens zoals afmetingen nodig.
+### Compartimenten
+Compartimenten worden als knooppunten meegenomen. Voor elk compartiment in de dataset zijn gegevens zoals afmetingen nodig.
 
-De volgende gegevens van compartimenten worden zo nodig wel overgenomen van het compositie-object (de put of het bouwwerk):
+De volgende gegevens van compartimenten worden - zo nodig - wel overgenomen van het compositie-object (de put of het bouwwerk waarin het compartiment zich bevindt):
 - Materiaal
 - Maaiveldschematisering
 - Bergend oppervlak
-- Hoogte (vanaf versie 1.6 bestaat het kenmerk HoogteCompartiment, dat gegeven wordt bij voorkeur gebruikt)
+- Hoogte (vanaf GWSW versie 1.6 bestaat het kenmerk HoogteCompartiment. Dit gegeven wordt bij voorkeur gebruikt.)
 
 Het bergend oppervlak werd in eerdere versies zonder bewerking overgenomen van het compositie-object. 
-Vanaf 20240814 wordt het bergend oppervlak evenredig verdeeld over het aantal compartimenten in het compositie-object.
+Vanaf 14 augustus 2024 wordt het bergend oppervlak evenredig verdeeld over het aantal compartimenten in het compositie-object.
 
-### Gegevens hulpstukken
-In het netwerk kunnen aansluitpunten en hulpstukken als knooppunt voorkomen. 
-Denk dan bijvoorbeeld aan uitlaatpunten, verbindingsstukken (bochtstukken, verloopstukken) of afsluitstukken.
-In het HydX-formaat is voor deze knooppunten niet een apart type gereserveerd, daarom worden hulpstukken in de HydX-download gedefinieerd 
-als een geknevelde Inspectieput (code INS) met minimale afmetingen (1x1x1 mm).
+### Hulpstukken
+In een rioleringsnetwerk kunnen aansluitpunten en hulpstukken voorkomen. Denk hierbij bijvoorbeeld aan uitlaatpunten, verbindingsstukken (bochtstukken, verloopstukken) of afsluitstukken. In het HydX-formaat is voor deze items geen apart knooppunttype gereserveerd. Omdat ze hydraulisch wel relevant zijn voor de verbindingen in het netwerk, worden aansluitpunten en hulpstukken in de HydX-download gedefinieerd als een Inspectieput (code INS) met een geknevelde maaiveldschematisering (code KNV) en met minimale afmetingen (1x1x1 mm). Het is aan de modelleur om hier rekentechnisch wenselijke afmetingen aan te geven.
 
 ### Niveau binnenonderkant
 Het HydX bevat in kolom KNP_BOK het niveau van de binnenonderkant knooppunt. Deze waarde wordt als volgt afgeleid:
-- Als de punt-geometrie 3 dimensies heeft: de Z-waarde uit de geometrie
-- Anders, als het knooppunt een put, bouwwerk of compartiment is: het gekoppelde maaiveldniveau verminderd met de knooppunt-hoogte
+- Als de punt-geometrie 3 dimensies heeft wordt de Z-waarde uit de geometrie gebruikt
+- Anders, als het knooppunt een put, bouwwerk of compartiment is, wordt het gekoppelde maaiveldniveau verminderd met de knooppunt-hoogte
 
 ### Omgaan met blinde en verdekte put
 De GWSW-types BlindePut en VerdektePut zijn in de dataset altijd extra (uitvoerings)typeringen. 
-Daarnaast is altijd het functionele type (Inspectieput, Overstortput, ...) in de dataset aanwezig. 
-De blinde put wordt wel meegenomen in de queries, zie ook https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq . 
-Het type BlindePut heeft effect op de maaiveldschematisering, die wordt "Gekneveld". 
-Dat geldt niet voor verdekte putten omdat de mate (massa) van verdekking onbekend is.
 
-## Gegevens verbindingen
+Daarnaast is altijd het functionele type (Inspectieput, Overstortput, ...) in de dataset aanwezig. 
+
+Een blinde put wordt wel - als apart uitvoeringstype - meegenomen in de queries, zie https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq . Het type BlindePut heeft namelijk effect op de maaiveldschematisering van het knooppunt. Die wordt "Gekneveld" (code KNV). 
+
+Een verdekte put wordt niet - als apart uitvoeringstype - meegenomen in de queries, omdat de mate (massa) van verdekking onbekend is.
+
+## Verbindingen
 
 Zie ook de query op https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Leiding.rq 
 
