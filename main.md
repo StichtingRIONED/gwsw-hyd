@@ -114,7 +114,7 @@ In PROFIEL.CSV wordt in veld PRO_VRM gedefinieerd welke vorm het profiel heeft. 
 Om een voorbeeld van KNOOPPUNT.CSV en VERBINDING.CSV te geven wordt het onderstaande ‘stelsel’ gebruikt (Figuur 3):
 
 
-<img src="media/Voorbeeldstelsel_a.jpg" style="width:100%;height:50%" />
+<img src="media/Voorbeeldstelsel_A.jpg" style="width:100%;height:50%" />
 
 *Figuur 3 - Voorbeeldstelsel A*  
 
@@ -152,7 +152,7 @@ N.B. Een terugslagklep kan worden geschematiseerd door de stromingsrichting van 
 ### Gecompartimenteerde put
 Om een voorbeeld van KNOOPPUNT.CSV, VERBINDING.CSV en KUNSTWERK.CSV te geven wordt het onderstaande ‘stelsel’ gebruikt (Figuur 4). 
 
-<img src="media/Voorbeeldstelsel_b.jpg" style="width:100%;height:50%" />
+<img src="media/voorbeeldstelsel_B.jpg" style="width:100%;height:50%" />
 
 *Figuur 4 - Voorbeeldstelsel B*  
 
