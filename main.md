@@ -160,7 +160,6 @@ Om een voorbeeld van KNOOPPUNT.CSV, VERBINDING.CSV en KUNSTWERK.CSV te geven wor
 
 Het KNOOPPUNT.CSV (Tabel 5) van ‘Voorbeeldstelsel B’ bevat vijf records (11000, 11001,11002, 11003, 11004).
 
-Noot: Als een compartiment tevens een uitlaat is, dan komt ‘uitlaat’ boven ‘compartiment’ in de prioritering bij KNP_TYP
 
 *Tabel 5 - KNOOPPUNT.CSV*  
 <img src="media/tabel5_knooppunt.jpg" style="width:80%;height:50%" />
@@ -174,6 +173,8 @@ Het KUNSTWERK.CSV (Tabel 7) van ‘Voorbeeldstelsel B’ bevat twee records (120
 
 *Tabel 7 - KUNSTWERK.CSV*  
 <img src="media/tabel7_kunstwerk.jpg" style="width:100%;height:50%" />
+
+Noot: Als een compartiment tevens een uitlaat is, dan komt ‘uitlaat’ boven ‘compartiment’ in de prioritering bij KNP_TYP.
 
 <a id="oppervlak"></a>
 ## Oppervlak
