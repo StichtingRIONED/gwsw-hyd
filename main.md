@@ -154,7 +154,7 @@ N.B. Een terugslagklep kan worden geschematiseerd door de stromingsrichting van 
 ### Gecompartimenteerde put
 Om een voorbeeld van KNOOPPUNT.CSV, VERBINDING.CSV en KUNSTWERK.CSV te geven wordt het onderstaande ‘stelsel’ gebruikt (Figuur 4). 
 
-<img src="media/voorbeeldstelsel_B.jpg" style="width:100%;height:50%" />
+<img src="media/voorbeeldstelsel_B.jpg" style="width:80%;height:50%" />
 
 *Figuur 4 - Voorbeeldstelsel B*  
 
@@ -163,12 +163,12 @@ Het KNOOPPUNT.CSV (Tabel 5) van ‘Voorbeeldstelsel B’ bevat vijf records (110
 Noot: Als een compartiment tevens een uitlaat is, dan komt ‘uitlaat’ boven ‘compartiment’ in de prioritering bij KNP_TYP
 
 *Tabel 5 - KNOOPPUNT.CSV*  
-<img src="media/tabel5_knooppunt.jpg" style="width:100%;height:50%" />
+<img src="media/tabel5_knooppunt.jpg" style="width:80%;height:50%" />
 
 Het VERBINDING.CSV (Tabel 6) van ‘Voorbeeldstelsel B’ bevat vier records (12001, 12021, 13301, 12301).
 
 *Tabel 6 - VERBINDING.CSV*  
-<img src="media/tabel6_verbinding.jpg" style="width:100%;height:50%" />
+<img src="media/tabel6_verbinding.jpg" style="width:90%;height:50%" />
 
 Het KUNSTWERK.CSV (Tabel 7) van ‘Voorbeeldstelsel B’ bevat twee records (12021 en 13301).
 
@@ -180,7 +180,7 @@ Het KUNSTWERK.CSV (Tabel 7) van ‘Voorbeeldstelsel B’ bevat twee records (120
 Om een voorbeeld van OPPERVLAK.CSV (Tabel 8) te geven wordt ‘Voorbeeldstelsel A’ gebruikt (Figuur 3). Oppervlak kan worden toegekend aan knooppunten en aan verbindingen. In het voorbeeld wordt gebruik gemaakt van het NWRW neerslag-afvoermodel.
 
 *Tabel 8 - OPPERVLAK.CSV*  
-<img src="media/tabel8_oppervlak.jpg" style="width:80%;height:50%" />
+<img src="media/tabel8_oppervlak.jpg" style="width:50%;height:50%" />
 
 Let op: Het is in het uitwisselformaat mogelijk om meerdere neerslag-afvoerconcepten te gebruiken op één UNI_IDE. Dit is (nog) niet of beperkt in de modelinstrumentaria mogelijk.
 Let op: Het is aan de modelleur om ervoor zorg te dragen dat oppervlak op de ‘juiste’ verbindingen terecht komt. Met andere woorden: Sluit geen oppervlak aan op kunstwerken zoals gemalen, overstorten en doorlaten
