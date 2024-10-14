@@ -114,18 +114,19 @@ In PROFIEL.CSV wordt in veld PRO_VRM gedefinieerd welke vorm het profiel heeft. 
 Om een voorbeeld van KNOOPPUNT.CSV en VERBINDING.CSV te geven wordt het onderstaande ‘stelsel’ gebruikt (Figuur 3):
 
 
-<img src="media/voorbeeldstelsel_A.jpg" style="width:100%;height:50%" />
+<img src="media/Voorbeeldstelsel_a.jpg" style="width:100%;height:50%" />
 
 *Figuur 3 - Voorbeeldstelsel A*  
 
-Het KNOOPPUNT.CSV van ‘Voorbeeldstelsel A’ bevat drie records (Tabel 1). Het VERBINDING.CSV van ‘Voorbeeldstelsel
-A’ bevat twee records (Tabel 2)
+Het KNOOPPUNT.CSV van ‘Voorbeeldstelsel A’ bevat drie records (Tabel 1). 
 
 *Tabel 1 - KNOOPPUNT.CSV*  
 <img src="media/tabel1_knooppunt.jpg" style="width:100%;height:50%" />
 
+Het VERBINDING.CSV van ‘Voorbeeldstelsel A’ bevat twee records (Tabel 2).
+
 *Tabel 2 - VERBINDING.CSV*  
-<img src="media/tabel2_verbinding.jpg" style="width:100%;height:50%" />
+<img src="media/tabel2_verbinding.jpg" style="width:80%;height:50%" />
 
 
 <a id="kunstwerken"></a>
@@ -141,7 +142,7 @@ N.B. In VERBINDING.CSV (Tabel 3) en KUNSTWERK.CSV (Tabel 4) worden knooppunten b
 N.B. Een terugslagklep kan worden geschematiseerd door de stromingsrichting van een verbinding te definiëren.
 
 *Tabel 3 - VERBINDING.CSV*  
-<img src="media/tabel3_verbinding.jpg" style="width:100%;height:50%" />
+<img src="media/tabel3_verbinding.jpg" style="width:80%;height:50%" />
 
 *Tabel 4 - KUNSTWERK.CSV*  
 <img src="media/tabel4_kunstwerk.jpg" style="width:100%;height:50%" />
@@ -151,19 +152,23 @@ N.B. Een terugslagklep kan worden geschematiseerd door de stromingsrichting van 
 ### Gecompartimenteerde put
 Om een voorbeeld van KNOOPPUNT.CSV, VERBINDING.CSV en KUNSTWERK.CSV te geven wordt het onderstaande ‘stelsel’ gebruikt (Figuur 4). 
 
-<img src="media/voorbeeldstelsel_A.jpg" style="width:100%;height:50%" />
+<img src="media/Voorbeeldstelsel_b.jpg" style="width:100%;height:50%" />
 
 *Figuur 4 - Voorbeeldstelsel B*  
 
-Het KNOOPPUNT.CSV (Tabel 5) van ‘Voorbeeldstelsel B’ bevat vijf records (11000, 11001,11002, 11003, 11004). Het VERBINDING.CSV (Tabel 6) van ‘Voorbeeldstelsel B’ bevat vier records (12001, 12021, 13301, 12301). Het KUNSTWERK.CSV (Tabel 7) van ‘Voorbeeldstelsel B’ bevat twee records (12021 en 13301).
+Het KNOOPPUNT.CSV (Tabel 5) van ‘Voorbeeldstelsel B’ bevat vijf records (11000, 11001,11002, 11003, 11004).
 
 Noot: Als een compartiment tevens een uitlaat is, dan komt ‘uitlaat’ boven ‘compartiment’ in de prioritering bij KNP_TYP
 
 *Tabel 5 - KNOOPPUNT.CSV*  
 <img src="media/tabel5_knooppunt.jpg" style="width:100%;height:50%" />
 
+Het VERBINDING.CSV (Tabel 6) van ‘Voorbeeldstelsel B’ bevat vier records (12001, 12021, 13301, 12301).
+
 *Tabel 6 - VERBINDING.CSV*  
 <img src="media/tabel6_verbinding.jpg" style="width:100%;height:50%" />
+
+Het KUNSTWERK.CSV (Tabel 7) van ‘Voorbeeldstelsel B’ bevat twee records (12021 en 13301).
 
 *Tabel 7 - KUNSTWERK.CSV*  
 <img src="media/tabel7_kunstwerk.jpg" style="width:100%;height:50%" />
@@ -173,7 +178,7 @@ Noot: Als een compartiment tevens een uitlaat is, dan komt ‘uitlaat’ boven �
 Om een voorbeeld van OPPERVLAK.CSV (Tabel 8) te geven wordt ‘Voorbeeldstelsel A’ gebruikt (Figuur 3). Oppervlak kan worden toegekend aan knooppunten en aan verbindingen. In het voorbeeld wordt gebruik gemaakt van het NWRW neerslag-afvoermodel.
 
 *Tabel 8 - OPPERVLAK.CSV*  
-<img src="media/tabel8_oppervlak.jpg" style="width:100%;height:50%" />
+<img src="media/tabel8_oppervlak.jpg" style="width:80%;height:50%" />
 
 Let op: Het is in het uitwisselformaat mogelijk om meerdere neerslag-afvoerconcepten te gebruiken op één UNI_IDE. Dit is (nog) niet of beperkt in de modelinstrumentaria mogelijk.
 Let op: Het is aan de modelleur om ervoor zorg te dragen dat oppervlak op de ‘juiste’ verbindingen terecht komt. Met andere woorden: Sluit geen oppervlak aan op kunstwerken zoals gemalen, overstorten en doorlaten
@@ -182,7 +187,7 @@ Let op: Het is aan de modelleur om ervoor zorg te dragen dat oppervlak op de ‘
 Om een voorbeeld van DEBIET.CSV (Tabel 9) en VERLOOP.CSV (Tabel 10) te geven wordt ‘Voorbeeldstelsel A’ gebruikt (Figuur 3). Vuilwater (VWD) of lateraal debiet met afvalwater en/of oppervlak (LAT) kan worden toegekend aan knooppunten en aan verbindingen. Bij een lateraal debiet met oppervlak worden geen neerslag-afvoerprocessen beschreven (met andere woorden: Alle neerslag dat op het oppervlak landt, komt direct als debiet op de UNI_IDE).
 
 *Tabel 9 - DEBIET.CSV*  
-<img src="media/tabel9_debiet.jpg" style="width:100%;height:50%" />
+<img src="media/tabel9_debiet.jpg" style="width:50%;height:50%" />
 
 *Tabel 10 - VERLOOP.CSV*  
 <img src="media/tabel10_verloop.jpg" style="width:100%;height:50%" />
@@ -194,7 +199,7 @@ Let op: Het is aan de modelleur om ervoor zorg te dragen dat DWA en lateraal deb
 In PROFIEL.CSV zijn de standaardvormen van leidingprofielen reeds opgenomen. Daaraan kunnen nieuwe profielen worden toegevoegd. In Tabel 11 staat een voorbeeld weergegeven, waarin ook tabulated en yz-profielen zijn opgenomen.
 
 *Tabel 11 - PROFIEL.CSV*  
-<img src="media/tabel11_profiel.jpg" style="width:100%;height:50%" />
+<img src="media/tabel11_profiel.jpg" style="width:80%;height:50%" />
 
 # Didactisch Stelsel
 
