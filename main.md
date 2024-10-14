@@ -239,10 +239,10 @@ stelselcategorie opgegeven.
 Het testbestand bestaat uit 84 knooppunten. Dit zijn 76 putten, waarvan er 1 infiltratieput is (knp67/7005), 3 een uitlaat zijn (Tabel 12) en 8 gecompartimenteerd zijn (Tabel 13). Elk compartiment is een apart knooppunt. Van elk knooppunt staan in KNOOPPUNT.CSV de geometrie, dimensies en materialen beschreven.
 
 *Tabel 12 - Uitlaten*  
-<img src="media/tabel12_uitlaten.jpg" style="width:40%;height:50%" />
+<img src="media/tabel12_uitlaten.jpg" style="width:40%;height:25%" />
 
 *Tabel 13 - Gecompartimenteerde putten*  
-<img src="media/tabel13_cmp.jpg" style="width:40%;height:50%" />
+<img src="media/tabel13_cmp.jpg" style="width:40%;height:25%" />
 
 ### Verbindingen
 Het testbestand bestaat uit 96 verbindingen, waaronder 75 gesloten leidingen (gemengd, vuilwater en hemelwater), 1 open water verbinding (lei79), 4 IT-leidingen (lei75, lei76, lei77 en lei78), 8 pompen, 2 doorlaten en 6 overstortdrempels. Op één locatie is er dubbele verbinding tussen twee putten (pmp93 en pmp94). Van elke verbinding staat in VERBINDING.CSV
@@ -252,13 +252,13 @@ beschreven tussen welke knooppunten deze is en wat voor een verbinding dit is, i
 Sommige knooppunten en verbindingen zijn kunstwerken. De kunstwerken staan beschreven in KUNSTWERK.CSV. Het testbestand bevat de volgende uitlaten (Tabel 14), doorlaten (Tabel 15), overstorten (Tabel 16) en pompen (Tabel 17):
 
 *Tabel 14 - Uitlaten*  
-<img src="media/tabel14_uitlaten.jpg" style="width:40%;height:50%" />
+<img src="media/tabel14_uitlaten.jpg" style="width:40%;height:25%" />
 
 *Tabel 15 - Doorlaten*  
-<img src="media/tabel15_doorlaten.jpg" style="width:60%;height:50%" />
+<img src="media/tabel15_doorlaten.jpg" style="width:50%;height:50%" />
 
 *Tabel 16 - Overstorten*  
-<img src="media/tabel16_overstorten.jpg" style="width:60%;height:50%" />
+<img src="media/tabel16_overstorten.jpg" style="width:50%;height:50%" />
 
 *Tabel 17 - Pompen*  
 <img src="media/tabel17_pompen.jpg" style="width:80%;height:50%" />
