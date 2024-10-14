@@ -69,7 +69,7 @@ hydraulische berekeningen uit te wisselen. Het formaat is flexibel zodat het mog
 
 ## Netwerk
 In het GWSW-Hyd wordt uitgegaan van een netwerkconcept, waarin onderlinge relaties en definities staan beschreven. Een netwerk bestaat uit knooppunten en verbindingen, die allen zijn voorzien van een unieke ID (UNI_IDE). In KNOOPPUNT.CSV staat de fysieke ligging en kenmerken van knooppunten beschreven. In VERBINDING.CSV staat
-beschreven welke knooppunten op welke manier zijn verbonden en welke condities daaraan zijn verbonden. Meervoudige verbindingen krijgen per verbinding een unieke ID. Knooppunten en verbindingen hebben unieke eigenschappen die in andere .CSV bestanden worden toegekend aan de unieke ID (zie het [Voorbeeld Knooppunt](#knooppunt) of [Voorbeeld Verbinding](#verbinding) )
+beschreven welke knooppunten op welke manier zijn verbonden en welke condities daaraan zijn verbonden. Meervoudige verbindingen krijgen per verbinding een unieke ID. Knooppunten en verbindingen hebben unieke eigenschappen die in andere .CSV bestanden worden toegekend aan de unieke ID (zie het [Voorbeeld Knooppunt](#knooppunt) of [Voorbeeld Verbinding](#verbinding) ).
 
 ## Kunstwerken
 Een kunstwerk kan een knooppunt of een verbinding zijn. Binnen het GWSW-Hyd wordt voorgesorteerd op de meest gangbare kunstwerken in de riolering, te weten pomp, overstortdrempel, doorlaat en uitlaat. De domeintabellen bieden ruimte voor uitbreidingen hierop. In KNOOPPUNT.CSV wordt in het veld KNP_TYP aangegeven als het om een
@@ -85,9 +85,9 @@ De belasting op een rioleringsstelsel heeft een neerslagcomponent (RWA) en afval
 ### Neerslag
 De directe neerslagcomponent wordt bepaald door het aangesloten oppervlak dat is opgenomen in OPPERVLAK.CSV gekoppeld aan een neerslag-afvoerconcept. In GWSW.hydx is het NWRW-inloopmodel als 0D neerslag-afvoerconcept standaard opgenomen. Andere concepten kunnen in de toekomst worden toegevoegd, maar zullen vermoedelijk in het
 2D-terreinmodel worden opgelost. In OPPERVLAK.CSV wordt per unieke ID (knooppunt of verbinding) aangegeven hoeveel vierkante meter (AFV_OPP) er via welk concept (AFV_DEF) met welke kenmerken (AFV_IDE) op afstroomt. Per unieke ID kunnen meerdere neerslagafvoerconcepten en specifieke kenmerken worden opgenomen door meerdere records van dat unieke ID op te nemen
-(zie het [Voorbeeld bij Oppervlak](#oppervlak) )
+(zie het [Voorbeeld bij Oppervlak](#oppervlak) ).
 
-## Vuilwater en lateraal debiet
+### Vuilwater en lateraal debiet
 De afvalwatercomponent wordt bepaald door belasting op een unieke ID (knooppunten en verbindingen) vanuit (directe) pandaansluitingen en (indirecte) laterale debieten (Paragraaf 4.5). In DEBIET.CSV wordt per unieke ID in het veld DEB_TYP aangegeven wat het debiettype is. Dit kan alleen vuilwater zijn (VWD) of een lateraal debiet met
 vuilwater en/of oppervlak (LAT). Denk bij dat laatste aan inprikkers van drukriolering, de inprik van een ‘bakjesmodel’ of een proceswaterlozing.
 
@@ -98,13 +98,15 @@ In het veld VER_IDE van DEBIET.CSV wordt verwezen naar de verloopdefinitie die i
 - CST – Constant debiet per uur met variabel dagvolume
 - VAR – Variabel debiet per uur met variabel dagvolume
 
+Zie het [Voorbeeld bij Vuilwater en lateraal debiet](#dwa) ).
+
 ## Meta-informatie
 Het bestand META.CSV bevat alle relevante meta-informatie behorende bij het uit te wisselen GWSW.hydx. Denk hierbij aan het aantal .CSV bestanden dat bij het GWSW.hydx behoort, zodat de volledigheid te controleren is, maar ook aan de vermelding van de opdrachtgever, de uitvoerende, enzovoort
 
 ## Extra ondersteunende definities
 Een verbinding kan een leiding of kunstwerk zijn. Dit wordt gedefinieerd in het veld VRB_TYP. Afhankelijk hiervan kunnen er losse profieldefinities (in PROFIEL.CSV voor VRB_TYP=GSL, OPL, ITR of DRL) en vervolgens eventueel ook definities voor infiltratie (in ITOBJECT.CSV voor VRB_TYP=ITR) worden opgegeven.
 
-In PROFIEL.CSV wordt in veld PRO_VRM gedefinieerd welke vorm het profiel heeft. Dit kunnen vaste vormen zijn, zoals rechthoekig of rond. Dit kunnen ook afwijkende vormen zijn. Voor profielen in open water dient gekozen te worden voor XY-profielen (XYP). Voor gesloten profielen dient gekozen te worden voor ‘tabulated’ profielen (TAB). In de bijbehorende waardevelden (TAB_BRE en TAB_HGT) worden de waarden opgegeven met een spatie als separator.
+In PROFIEL.CSV wordt in veld PRO_VRM gedefinieerd welke vorm het profiel heeft. Dit kunnen vaste vormen zijn, zoals rechthoekig of rond. Dit kunnen ook afwijkende vormen zijn. Voor profielen in open water dient gekozen te worden voor XY-profielen (XYP). Voor gesloten profielen dient gekozen te worden voor ‘tabulated’ profielen (TAB). In de bijbehorende waardevelden (TAB_BRE en TAB_HGT) worden de waarden opgegeven met een spatie als separator. Zie het [Voorbeeld bij Profiel](#profiel) ).
 
 # Voorbeelden
 <a id="knooppunt"></a>
@@ -183,6 +185,7 @@ Om een voorbeeld van OPPERVLAK.CSV (Tabel 8) te geven wordt ‘Voorbeeldstelsel 
 Let op: Het is in het uitwisselformaat mogelijk om meerdere neerslag-afvoerconcepten te gebruiken op één UNI_IDE. Dit is (nog) niet of beperkt in de modelinstrumentaria mogelijk.
 Let op: Het is aan de modelleur om ervoor zorg te dragen dat oppervlak op de ‘juiste’ verbindingen terecht komt. Met andere woorden: Sluit geen oppervlak aan op kunstwerken zoals gemalen, overstorten en doorlaten
 
+<a id="dwa"></a>
 ## Vuilwater en lateraal debiet
 Om een voorbeeld van DEBIET.CSV (Tabel 9) en VERLOOP.CSV (Tabel 10) te geven wordt ‘Voorbeeldstelsel A’ gebruikt (Figuur 3). Vuilwater (VWD) of lateraal debiet met afvalwater en/of oppervlak (LAT) kan worden toegekend aan knooppunten en aan verbindingen. Bij een lateraal debiet met oppervlak worden geen neerslag-afvoerprocessen beschreven (met andere woorden: Alle neerslag dat op het oppervlak landt, komt direct als debiet op de UNI_IDE).
 
@@ -195,6 +198,7 @@ Om een voorbeeld van DEBIET.CSV (Tabel 9) en VERLOOP.CSV (Tabel 10) te geven wor
 Let op: Het is in het uitwisselformaat mogelijk om meerdere verlopen op één UNI_IDE te zetten. Dit is (nog) niet in alle modelinstrumentaria mogelijk.
 Let op: Het is aan de modelleur om ervoor zorg te dragen dat DWA en lateraal debiet op de ‘juiste’ verbindingen terecht komt. Met andere woorden: Sluit geen afvalwater aan op kunstwerken zoals gemalen, overstorten en doorlaten.
 
+<a id="profiel"></a>
 ## Profiel
 In PROFIEL.CSV zijn de standaardvormen van leidingprofielen reeds opgenomen. Daaraan kunnen nieuwe profielen worden toegevoegd. In Tabel 11 staat een voorbeeld weergegeven, waarin ook tabulated en yz-profielen zijn opgenomen.
 
