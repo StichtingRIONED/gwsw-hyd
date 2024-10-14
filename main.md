@@ -205,15 +205,99 @@ In PROFIEL.CSV zijn de standaardvormen van leidingprofielen reeds opgenomen. Daa
 *Tabel 11 - PROFIEL.CSV*  
 <img src="media/tabel11_profiel.jpg" style="width:80%;height:50%" />
 
-# Didactisch Stelsel
+# Testbestand
 
-## Schema Didactisch Stelsel 
+## Inleiding
+Om de implementatie van het GWSW-Hyd en het .hydx technisch te faciliteren, stelt Stichting RIONED een testbestand beschikbaar. Het testbestand volgt het gegevensmodel GWSW-Hyd. In dit testbestand zijn alle velden die voorkomen in het .hydx uitwisselformaat tenminste één keer voorzien van een waarde en worden alle mogelijke domeinwaarden tenminste één keer toegepast. Daarmee is dit testbestand geschikt om software te testen op conformiteit aan het uitwisselformaat. In deze paragraaf staat de opbouw van het testbestand beschreven.
 
-Presentatie met QGIS op basis van de voorbeeld-dataset op https://apps.gwsw.nl/doc/GwswDataset__DidacStelsel_v1.6.orox.ttl
+## Globale opbouw
 
-<img src="media/Schema didactisch stelsel.png" style="width:100%;height:100%" />
+Het testbestand beschrijft een combinatie van fictieve rioolstelsels met daarin een diversiteit aan hydraulisch relevante constructies en belastingen op het stelsel. Met het samenstellen van het testbestand is enkel het doel van het testen van gegevensuitwisseling conform het .hydx uitwisselformaat beschouwd. Het testbestand staat schematisch
+weergegeven in Figuur 5 en staat als orox bestand op https://apps.gwsw.nl/doc/GwswDataset__DidacStelsel_v1.6.orox.ttl
 
-pm
+<img src="media/Schema didactisch stelsel.png" style="width:80%;height:100%" />
+*Figuur 5 - Schematische weergave van het testbestand* 
+
+
+## Beschrijving testbestand
+Het testbestand bestaat uit de volgende .CSV bestanden:
+- KNOOPPUNT.csv
+- VERBINDING.csv
+- ITOBJECT.csv
+- PROFIEL.csv
+- KUNSTWERK.csv
+- OPPERVLAK.csv
+- NWRW.csv
+- DEBIET.csv
+- VERLOOP.csv
+- META.csv
+In META.csv staat metadata opgenomen behorend bij het testbestand. Hieronder staan de relevante zaken per
+stelselcategorie opgegeven.
+
+### Knooppunten
+Het testbestand bestaat uit 84 knooppunten. Dit zijn 76 putten, waarvan er 1 infiltratieput is (knp67/7005), 3 een uitlaat zijn (Tabel 1) en 8 gecompartimenteerd zijn (Tabel 2). Elk compartiment is een apart knooppunt. Van elk knooppunt staan in KNOOPPUNT.CSV de geometrie, dimensies en materialen beschreven.
+
+*Tabel 12 - Uitlaten*  
+<img src="media/tabel12_uitlaten.jpg" style="width:80%;height:50%" />
+
+*Tabel 13 - Gecompartimenteerde putten*  
+<img src="media/tabel13_cmp.jpg" style="width:80%;height:50%" />
+
+### Verbindingen
+Het testbestand bestaat uit 96 verbindingen, waaronder 75 gesloten leidingen (gemengd, vuilwater en hemelwater), 1 open water verbinding (lei79), 4 IT-leidingen (lei75, lei76, lei77 en lei78), 8 pompen, 2 doorlaten en 6 overstortdrempels. Op één locatie is er dubbele verbinding tussen twee putten (pmp93 en pmp94). Van elke verbinding staat in VERBINDING.CSV
+beschreven tussen welke knooppunten deze is en wat voor een verbinding dit is, inclusief eventuele dimensies en materialen
+
+### Kunstwerken
+Sommige knooppunten en verbindingen zijn kunstwerken. De kunstwerken staan beschreven in KUNSTWERK.CSV. Het testbestand bevat de volgende uitlaten (Tabel 14), doorlaten (Tabel 15), overstorten (Tabel 16) en pompen (Tabel 17):
+
+*Tabel 14 - Uitlaten*  
+<img src="media/tabel14_uitlaten.jpg" style="width:80%;height:50%" />
+
+*Tabel 15 - Doorlaten*  
+<img src="media/tabel15_doorlaten.jpg" style="width:80%;height:50%" />
+
+*Tabel 16 - Overstorten*  
+<img src="media/tabel16_overstorten.jpg" style="width:80%;height:50%" />
+
+*Tabel 17 - Pompen*  
+<img src="media/tabel17_pompen.jpg" style="width:80%;height:50%" />
+
+Eén doorlaat (drl97) is begrenst met een maximale capaciteit. Één overstort (ovs83) heeft een maximaal overstortende
+straal. Één pomp (pmp89) voert conform een Qh-relatie af. De afvoer van één pomp (pmp90) wordt bepaald door de
+bovenstroomse waterstand.
+
+### Profiel
+Bij bepaalde verbindingen, zoals gesloten leidingen, open water, IT-leidingen en doorlaten, staat in het veld PRO_IDE een verwijzing naar de profieldefinitie. De profieldefinitie staat beschreven in PROFIEL.CSV. Naast een groot aantal standaardleidingen voor de riolering (PVC/beton – rond/eivorming – meerdere afmetingen),
+bevat het testbestand ook een aantal afwijkende profielen (Tabel 18).
+
+*Tabel 18 - Profielen*  
+<img src="media/tabel18_profiel.jpg" style="width:80%;height:50%" />
+
+### Infiltratieobjecten
+Sommige knooppunten en verbindingen zijn infiltratieobjecten. Dan staat in het veld ITO_IDE een verwijzing naar de infiltratiedefinitie. De infiltratiedefinitie staat beschreven in ITOBJECT.CSV (Tabel 19).
+
+*Tabel 19 - Infiltratiedefinities*  
+<img src="media/tabel19_it.jpg" style="width:80%;height:50%" />
+
+Van de verbindingen zijn lei75, 76, 77 en 78 infiltratieleidingen, met infiltratiedefinitie IT1.
+Van de knooppunten is knp67 (put 07005) een infiltratieput, met infiltratiedefinitie IT2.
+
+### Belasting
+De knooppunten en verbindingen van de rioolstelsels van het testbestand worden hydraulisch belast door afvoerend oppervlak en door vuilwater en lateraal debiet. 
+Voor de belasting door afvoerend oppervlak (beschreven in OPPERVLAK.CSV) wordt in het testbestand enkel het NWRW neerslag-afvoerconcept gebruikt. In totaal is er 61.500 m2 oppervlak op het stelsel aangesloten dan inloopt via het NWRW-inloopmodel. 
+In het testbestand ontvangen 6 knooppunten een belasting met vuilwater (VWD), waarvan er 5 het verloop van “Bedrijf” hebben en 1 het verloop van “Inwoner” heeft. In het testbestand ontvangen 63 verbindingen een belasting met vuilwater (VWD), waarvan er 57 het verloop van “Bedrijf” hebben , 2 het verloop van “Inwoner” hebben en 2 het verloop van “Kantoor” hebben. 
+Er zijn 3 objecten, die een lateraal debiet ontvangen, waarvan er 2 (knp10 en lei4) een eigen verloop hebben en 1 (knp11) wordt bepaald door het aangesloten oppervlak (Tabel 20).
+
+*Tabel 20 - Lateraal debiet*  
+<img src="media/tabel20_lateraal.jpg" style="width:80%;height:50%" />
+
+## Schematisatie in detail 
+In Figuur 6 staat aangegeven welke delen van de schematisatie in meer detail worden getoond in deze paragraaf.
+
+<img src="media/figuur6_detail" style="width:80%;height:100%" />
+*Figuur 6 - Onderdelen van de schematisatie die in meer detail worden getoond* 
+
+PM
 
 # HydX-download
 
