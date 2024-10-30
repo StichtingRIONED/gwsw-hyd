@@ -5,7 +5,7 @@
   .symbol{width:30px;height:30px;margin-right:1em;vertical-align:middle}
 </style>
 
-<a id="werkgroep"></a>
+<div id="werkgroep"></div>
 De module GWSW-Hyd is ontwikkeld door Jordie Netten (Stichting Rioned/Netten Wateradvies), in samenwerking met de werkgroep GWSW-Hyd, bestaande uit:
 - Marco van Bijnen (Van Bijnen Advies)
 - Katrin Boden, Guido Vaes en Ilse Bisson (Inneautech, Hydroscan, Infoworks ICM)
@@ -18,7 +18,7 @@ De module GWSW-Hyd is ontwikkeld door Jordie Netten (Stichting Rioned/Netten Wat
 - Arnold van 't Veld en Jonas van Schrojenstein Landman (Nelen & Schuurmans, 3Di)
 - Sjaak Verkerk (Antea Group)
 - Johan Veurink (Arcadis)
-- Marinus Vonhof (Stichting RIONED/Marivon)
+- Marinus Vonhof (Stichting RIONED/marIvon)
 - Wouter van Riel (Stichting RIONED/Infralytics)
 
 Vanuit Stichting RIONED is Eric Oosterom de verantwoordelijk projectmanager. Vragen over de module en de totstandkoming en vaststelling ervan kunt u stellen via gwsw@rioned.org. 
@@ -109,8 +109,8 @@ Een verbinding kan een leiding of kunstwerk zijn. Dit wordt gedefinieerd in het 
 In PROFIEL.CSV wordt in veld PRO_VRM gedefinieerd welke vorm het profiel heeft. Dit kunnen vaste vormen zijn, zoals rechthoekig of rond. Dit kunnen ook afwijkende vormen zijn. Voor profielen in open water dient gekozen te worden voor XY-profielen (XYP). Voor gesloten profielen dient gekozen te worden voor ‘tabulated’ profielen (TAB). In de bijbehorende waardevelden (TAB_BRE en TAB_HGT) worden de waarden opgegeven met een spatie als separator. Zie het [Voorbeeld bij Profiel](#profiel)).
 
 # Voorbeelden
-<a id="knooppunt"></a>
-<a id="verbinding"></a>
+<div id="knooppunt"></div>
+<div id="verbinding"></div>
 
 ## Knooppunt en Verbinding
 Om een voorbeeld van KNOOPPUNT.CSV en VERBINDING.CSV te geven wordt het onderstaande ‘stelsel’ gebruikt (Figuur 3):
@@ -131,7 +131,7 @@ Het VERBINDING.CSV van ‘Voorbeeldstelsel A’ bevat twee records (Tabel 2).
 <img src="media/tabel2_verbinding.jpg" style="width:80%;height:50%" />
 
 
-<a id="kunstwerken"></a>
+<div id="kunstwerken" href=""></div>
 ## Kunstwerken
 
 Knooppunten en verbindingen kunnen ook kunstwerken zijn. Hieronder een voorbeeld van op welke wijze kunstwerken kunnen worden opgenomen in GWSW.hydx. Aandachtspunten hierbij zijn:
@@ -150,7 +150,7 @@ N.B. Een terugslagklep kan worden geschematiseerd door de stromingsrichting van 
 <img src="media/tabel4_kunstwerk.jpg" style="width:100%;height:50%" />
 
 ## Bijzondere constructies
-<a id="compartiment"></a>
+<div id="compartiment"></div>
 ### Gecompartimenteerde put
 Om een voorbeeld van KNOOPPUNT.CSV, VERBINDING.CSV en KUNSTWERK.CSV te geven wordt het onderstaande ‘stelsel’ gebruikt (Figuur 4). 
 
@@ -176,7 +176,7 @@ Het KUNSTWERK.CSV (Tabel 7) van ‘Voorbeeldstelsel B’ bevat twee records (120
 
 Noot: Als een compartiment tevens een uitlaat is, dan komt ‘uitlaat’ boven ‘compartiment’ in de prioritering bij KNP_TYP.
 
-<a id="oppervlak"></a>
+<div id="oppervlak"></div>
 ## Oppervlak
 Om een voorbeeld van OPPERVLAK.CSV (Tabel 8) te geven wordt ‘Voorbeeldstelsel A’ gebruikt (Figuur 3). Oppervlak kan worden toegekend aan knooppunten en aan verbindingen. In het voorbeeld wordt gebruik gemaakt van het NWRW neerslag-afvoermodel.
 
@@ -186,7 +186,7 @@ Om een voorbeeld van OPPERVLAK.CSV (Tabel 8) te geven wordt ‘Voorbeeldstelsel 
 Let op: Het is in het uitwisselformaat mogelijk om meerdere neerslag-afvoerconcepten te gebruiken op één UNI_IDE. Dit is (nog) niet of beperkt in de modelinstrumentaria mogelijk.
 Let op: Het is aan de modelleur om ervoor zorg te dragen dat oppervlak op de ‘juiste’ verbindingen terecht komt. Met andere woorden: Sluit geen oppervlak aan op kunstwerken zoals gemalen, overstorten en doorlaten
 
-<a id="dwa"></a>
+<div id="dwa"></div>
 ## Vuilwater en lateraal debiet
 Om een voorbeeld van DEBIET.CSV (Tabel 9) en VERLOOP.CSV (Tabel 10) te geven wordt ‘Voorbeeldstelsel A’ gebruikt (Figuur 3). Vuilwater (VWD) of lateraal debiet met afvalwater en/of oppervlak (LAT) kan worden toegekend aan knooppunten en aan verbindingen. Bij een lateraal debiet met oppervlak worden geen neerslag-afvoerprocessen beschreven. Met andere woorden: Alle neerslag dat op het oppervlak landt, komt direct als debiet op de UNI_IDE.
 
@@ -199,7 +199,7 @@ Om een voorbeeld van DEBIET.CSV (Tabel 9) en VERLOOP.CSV (Tabel 10) te geven wor
 Let op: Het is in het uitwisselformaat mogelijk om meerdere verlopen op één UNI_IDE te zetten. Dit is (nog) niet in alle modelinstrumentaria mogelijk.
 Let op: Het is aan de modelleur om ervoor zorg te dragen dat DWA en lateraal debiet op de ‘juiste’ verbindingen terecht komt. Met andere woorden: Sluit geen afvalwater aan op kunstwerken zoals gemalen, overstorten en doorlaten.
 
-<a id="profiel"></a>
+<div id="profiel"></div>
 ## Profiel
 In PROFIEL.CSV zijn de standaardvormen van leidingprofielen reeds opgenomen. Daaraan kunnen nieuwe profielen worden toegevoegd. In Tabel 11 staat een voorbeeld weergegeven, waarin ook tabulated en yz-profielen zijn opgenomen.
 
@@ -338,8 +338,20 @@ Om deze SPARQL-queries (met extensie .rq) te kunnen lezen is enige kennis van SP
 noodzakelijk om de werking van de HydX-download in de basis te begrijpen. 
 Deze paragraaf licht alleen de aanvullende bewerkingen van de query-resultaten toe.
 
+## Coderingen in het HydX
+
+De GWSW-aanduidingen voor vorm leiding, vorm put, materiaal leiding, enzovoort worden in de HydX-download omgezet naar de HydX-coderingen.
+Voor deze omzetting wordt het deelmodel HydX gebruikt met daarin alle specificaties (voor de SPARQL-kenners, via de query op [HydX_collection.rq](https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/HydX_Collection.rq)).
+
+In het deelmodel HydX zijn alle vertalingen van GWSW-aanduidingen naar HydX-coderingen opgenomen.
+Zie bijvoorbeeld de collectie voor materiaal leiding op https://data.gwsw.nl/MateriaalLeidingColl, voor de gangbare leidingmaterialen is een bijbehorende HydX-code gedefinieerd.
+
+<img src="media/materiaal_leiding_coll.png" style="width:40%;height:100%" /> <img src="media/asbestcement.png" style="width:40%;height:100%" />
+
+Dit voorbeeld toont dat voor asbestcement (https://data.gwsw.nl/Asbestcement) dezelfde code als voor beton wordt gebruikt (BET). 
+
 ## Knooppunten
-Zie ook de query op https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq 
+Voor de SPARQL-kenners, zie ook de query op [Hyd_Knooppunt.rq](https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq) 
 
 ### Compartimenten
 Compartimenten worden als knooppunten meegenomen. Voor elk compartiment in de dataset zijn gegevens zoals afmetingen nodig.
@@ -374,7 +386,9 @@ Een verdekte put wordt niet - als apart uitvoeringstype - meegenomen in de queri
 
 Zie ook de query op https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Leiding.rq 
 
-Het **type Inzameling** wordt op basis van het leidingtype afgeleid:
+### Type inzameling
+
+Het type Inzameling wordt op basis van het leidingtype afgeleid:
 
 | URI Leidingtype            | Code | Opmerking                        |
 |----------------------------|------|----------------------------------|
@@ -386,7 +400,9 @@ Het **type Inzameling** wordt op basis van het leidingtype afgeleid:
 | VrijvervalTransportleiding | NVT  | Gebruik het supertype (20190430) |
 | OpenLeiding                | NVT  | Gebruik het supertype (20190430) |
 
-Het **type Verbinding** wordt op basis van het leidingtype afgeleid:
+### Type verbinding
+
+Het type Verbinding wordt op basis van het leidingtype afgeleid:
 
 | URI Leidingtype            | Code | Opmerking                        |
 |----------------------------|------|----------------------------------|
@@ -399,3 +415,22 @@ Het **type Verbinding** wordt op basis van het leidingtype afgeleid:
 | VrijvervalTransportleiding | GSL  | Gebruik het supertype (20190430) |
 | OpenLeiding                | OPL  | Gebruik het supertype (20190430) |
 
+### Binnenmaat profiel
+
+In het GWSW wordt de gangbare afmeting-maat voor leidingen gebruikt. 
+Voor kunststof is die gangbare maat de buitendiameter, voor andere materialen is dat de binnendiameter.
+Zie ook [https://data.gwsw.nl/DiameterLeiding](https://data.gwsw.nl/DiameterLeiding).
+
+Voor het HydX wordt altijd de binnenmaat van het profiel gebruikt.
+
+Bepaal het profiel bij kunststof leidingen:
+* Leiding is van kunststof als de HydX-materiaalcode is PVC of HPE
+  Bij kunsstof-leidingen is de doorsnede-afmeting (breedte, hoogte, diameter) altijd buitenwerks
+  De binnenmaat (het profiel) wordt voor alle leidingvormen als volgt bepaald:
+
+* het kenmerk Wanddikte is ingevuld: 
+  de binnenmaat wordt [breedte/hoogte - 2*wanddikte]
+  - geen Wanddikte, wel kenmerk SDR_waarde ingevuld
+    de wanddikte wordt [breedte / sdr], de binnenmaat wordt [breedte/hoogte - 2*wanddikte]
+  - geen Wanddikte en geen SDR_waarde ingevuld
+    er wordt uitgegaan van SDR_waarde 41, zie verder hiervoor
