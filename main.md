@@ -6,7 +6,7 @@
 </style>
 
 <div id="werkgroep"></div>
-De module GWSW-Hyd is ontwikkeld door Jordie Netten (Stichting Rioned/Netten Wateradvies), in samenwerking met de werkgroep GWSW-Hyd, bestaande uit:
+De module GWSW-Hyd is ontwikkeld onder de projectleiding van Jordie Netten (Netten Wateradvies), in samenwerking met de werkgroep GWSW-Hyd, bestaande uit:
 - Marco van Bijnen (Van Bijnen Advies)
 - Katrin Boden, Guido Vaes en Ilse Bisson (Inneautech, Hydroscan, Infoworks ICM)
 - Arthur van Dam en Didrik Meijer (Deltares, D-Hydro)
@@ -424,13 +424,12 @@ Zie ook [https://data.gwsw.nl/DiameterLeiding](https://data.gwsw.nl/DiameterLeid
 Voor het HydX wordt altijd de binnenmaat van het profiel gebruikt.
 
 Bepaal het profiel bij kunststof leidingen:
-* Leiding is van kunststof als de HydX-materiaalcode is PVC of HPE
-  Bij kunsstof-leidingen is de doorsnede-afmeting (breedte, hoogte, diameter) altijd buitenwerks
-  De binnenmaat (het profiel) wordt voor alle leidingvormen als volgt bepaald:
 
+* Leiding is van kunststof als de HydX-materiaalcode = PVC of HPE
+  De binnenmaat (het profiel) wordt voor alle leidingvormen als volgt bepaald:
 * het kenmerk Wanddikte is ingevuld: 
-  de binnenmaat wordt [breedte/hoogte - 2*wanddikte]
-  - geen Wanddikte, wel kenmerk SDR_waarde ingevuld
-    de wanddikte wordt [breedte / sdr], de binnenmaat wordt [breedte/hoogte - 2*wanddikte]
-  - geen Wanddikte en geen SDR_waarde ingevuld
+  de binnenmaat wordt [breedte / hoogte - 2 * wanddikte]
+* geen Wanddikte, wel kenmerk SDR_waarde ingevuld
+  de wanddikte wordt [breedte / sdr], de binnenmaat wordt [breedte / hoogte - 2 * wanddikte]
+* geen Wanddikte en geen SDR_waarde ingevuld
     er wordt uitgegaan van SDR_waarde 41, zie verder hiervoor
