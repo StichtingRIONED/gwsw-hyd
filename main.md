@@ -391,6 +391,10 @@ die zijn beschreven in KUNSTWERK.CSV.
 
 # HydX-download
 
+[Putorientatie]: https://data.gwsw.nl/Revisies/index.html?menu_item=classes&item=./Putorientatie
+[GWSW.hydx Definitie]: https://apps.gwsw.nl/doc/GWSW.hydx%20Definitie.xlsx
+[Hyd_Knooppunt.rq]: https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq
+
 Deze paragraaf beschrijft de werking van de HydX-download met GWSW-Apps.
 
 De basis voor deze applicaties vormen de queries op https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd . 
@@ -400,12 +404,14 @@ noodzakelijk om de werking van de HydX-download in de basis te begrijpen.
 Deze paragraaf licht alleen de aanvullende bewerkingen van de query-resultaten toe.
 
 ## Coderingen in het HydX
+Voor de SPARQL-kenners, zie ook de query op [HydX_collection.rq](https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/HydX_Collection.rq).
 
 De GWSW-aanduidingen voor vorm leiding, vorm put, materiaal leiding, enzovoort worden in de HydX-download omgezet naar de HydX-coderingen.
-Voor deze omzetting wordt het deelmodel HydX gebruikt met daarin alle specificaties (voor de SPARQL-kenners, 
-via de query op [HydX_collection.rq](https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/HydX_Collection.rq)).
+Voor deze omzetting wordt het deelmodel HydX gebruikt met daarin alle specificaties.
 
-In het deelmodel HydX zijn alle vertalingen van GWSW-aanduidingen naar HydX-coderingen opgenomen.
+In de spreadsheet [GWSW.hydx Definitie] staat het overzicht van alle coderingen in het blad Domeintabellen.
+
+In het deelmodel HydX zijn alle vertalingen (mappings) van GWSW-aanduidingen naar HydX-coderingen opgenomen.
 Zie bijvoorbeeld de collectie voor materiaal leiding op https://data.gwsw.nl/MateriaalLeidingColl, voor de gangbare leidingmaterialen is een bijbehorende HydX-code gedefinieerd.
 
 <img src="media/materiaal_leiding_coll.png" style="width:40%;height:100%" /> <img src="media/asbestcement.png" style="width:40%;height:100%" />
@@ -413,7 +419,15 @@ Zie bijvoorbeeld de collectie voor materiaal leiding op https://data.gwsw.nl/Mat
 Dit voorbeeld toont dat voor asbestcement (https://data.gwsw.nl/Asbestcement) dezelfde code als voor beton wordt gebruikt (BET). 
 
 ## Knooppunten
-Voor de SPARQL-kenners, zie ook de query op [Hyd_Knooppunt.rq](https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Knooppunt.rq) 
+Voor de SPARQL-kenners, zie ook de query op [Hyd_Knooppunt.rq].
+
+### Typeringen
+De omzetting van GWSW-klassen naar Type Knooppunt is onderdeel van de HydX-coderingen zoals hiervoor beschreven. 
+Zie het blad Domeintabellen in [GWSW.hydx Definitie], in de kolom "LabelElement" staan de klasse-namen uit het GWSW.
+Hierbij enkele opmerkingen:
+* Voor de GWSW-klassenamen Nooduitlaat en UitlaatPunt wordt de klassenaam Uitlaat gebruikt
+* Voor de GWSW-klassenamen Infiltratiebassin wordt de klassenaam Infiltratieput gebruikt
+* Voor knooppunttypes die niet in [GWSW.hydx Definitie] gevonden worden, wordt de HydX-code INS gebruikt en wordt een opmerking in het .hydx geplaatst.
 
 ### Compartimenten
 Compartimenten worden als knooppunten meegenomen. Voor elk compartiment in de dataset zijn gegevens zoals afmetingen nodig.
@@ -449,26 +463,10 @@ Het type BlindePut heeft namelijk effect op de maaiveldschematisering van het kn
 Een verdekte put wordt niet - als apart uitvoeringstype - meegenomen in de queries, omdat de mate (massa) van verdekking onbekend is.
 
 ## Verbindingen
-
 Voor de SPARQL-kenners, zie ook de query op [Hyd_Leiding.rq](https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Leiding.rq) 
 
-### Type inzameling
-
-Het type Inzameling wordt op basis van het leidingtype afgeleid:
-
-| URI Leidingtype            | Code | Opmerking                        |
-|----------------------------|------|----------------------------------|
-| GemengdRiool               | GMD  |                                  |
-| Overstortleiding           | HWA  |                                  |
-| Vuilwaterriool             | DWA  |                                  |
-| Hemelwaterriool            | HWA  |                                  |
-| Infiltratieriool           | HWA  | (20190430)                       |
-| VrijvervalTransportleiding | NVT  | Gebruik het supertype (20190430) |
-| OpenLeiding                | NVT  | Gebruik het supertype (20190430) |
-
-### Type verbinding
-
-Het type Verbinding wordt op basis van het leidingtype afgeleid:
+### Typeringen
+Het type Verbinding wordt op basis van het GWSW-leidingtype afgeleid:
 
 | URI Leidingtype            | Code | Opmerking                        |
 |----------------------------|------|----------------------------------|
@@ -481,8 +479,23 @@ Het type Verbinding wordt op basis van het leidingtype afgeleid:
 | VrijvervalTransportleiding | GSL  | Gebruik het supertype (20190430) |
 | OpenLeiding                | OPL  | Gebruik het supertype (20190430) |
 
-### Binnenmaat profiel
+Hierbij de opmerking:
+* Voor leidingtypes die in deze tabel ontbreken, wordt de HydX-code GSL gebruikt en wordt een opmerking in het .hydx geplaatst.
 
+### Type inzameling
+Het type Inzameling wordt op basis van het leidingtype afgeleid:
+
+| URI Leidingtype            | Code | Opmerking                        |
+|----------------------------|------|----------------------------------|
+| GemengdRiool               | GMD  |                                  |
+| Overstortleiding           | HWA  |                                  |
+| Vuilwaterriool             | DWA  |                                  |
+| Hemelwaterriool            | HWA  |                                  |
+| Infiltratieriool           | HWA  | (20190430)                       |
+| VrijvervalTransportleiding | NVT  | Gebruik het supertype (20190430) |
+| OpenLeiding                | NVT  | Gebruik het supertype (20190430) |
+
+### Binnenmaat profiel
 In het GWSW wordt de gangbare afmeting-maat voor leidingen gebruikt. 
 Voor kunststof is die gangbare maat de buitendiameter, voor andere materialen is dat de binnendiameter.
 Zie ook [https://data.gwsw.nl/DiameterLeiding](https://data.gwsw.nl/DiameterLeiding).
@@ -499,3 +512,16 @@ Bepaal het profiel bij kunststof leidingen:
   de wanddikte wordt [breedte / sdr], de binnenmaat wordt [breedte / hoogte - 2 * wanddikte]
 * geen Wanddikte en geen SDR_waarde ingevuld
     er wordt uitgegaan van SDR_waarde 41, zie verder hiervoor
+
+## Kunstwerken
+Voor de SPARQL-kenners, zie ook de queries op 
+* [Hyd_Doorlaat.rq](https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Doorlaat.rq) 
+* [Hyd_Drempel.rq](https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Dremppel.rq) 
+* [Hyd_Uitlaat.rq](https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Uitlaat.rq) 
+* [Hyd_Pomp.rq](https://github.com/StichtingRIONED/gwsw_queries/blob/main/apps/Hyd/Hyd_Pomp.rq)
+
+### Typeringen
+De omzetting van GWSW-klassen naar Type Kunstwerk is onderdeel van de HydX-coderingen zoals hiervoor beschreven. 
+Zie het blad Domeintabellen in [GWSW.hydx Definitie], in de kolom "LabelElement" staan de klasse-namen uit het GWSW.
+Hierbij de opmerking:
+* Voor de subtypes van de GWSW-klasse Doorlaat wordt de klassenaam Doorlaat gebruikt
