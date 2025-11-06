@@ -427,7 +427,9 @@ Zie het blad Domeintabellen in [GWSW.hydx Definitie], in de kolom "LabelElement"
 Hierbij enkele opmerkingen:
 * Voor de GWSW-klassenamen Nooduitlaat en UitlaatPunt wordt de klassenaam Uitlaat gebruikt
 * Voor de GWSW-klassenamen Infiltratiebassin wordt de klassenaam Infiltratieput gebruikt
-* Voor knooppunttypes die niet in [GWSW.hydx Definitie] gevonden worden, wordt de HydX-code INS gebruikt en wordt een opmerking in het .hydx geplaatst.
+* Alle knooppunttypes die verbonden zijn met relevante leidingen (zie [verbindingen](#verbindingen)) worden meegenomen. 
+Daaronder vallen ook bouwwerken, compartimenten en hulpstukken.
+Voor knooppunttypes die niet in [GWSW.hydx Definitie] gevonden worden, wordt de HydX-code INS gebruikt en wordt een opmerking in het .hydx geplaatst.
 
 ### Compartimenten
 Compartimenten worden als knooppunten meegenomen. Voor elk compartiment in de dataset zijn gegevens zoals afmetingen nodig.
@@ -470,17 +472,15 @@ Het type Verbinding wordt op basis van het GWSW-leidingtype afgeleid:
 
 | URI Leidingtype            | Code | Opmerking                        |
 |----------------------------|------|----------------------------------|
-| GemengdRiool               | GSL  |                                  |
-| Overstortleiding           | GSL  |                                  |
-| Vuilwaterriool             | GSL  |                                  |
-| Hemelwaterriool            | GSL  |                                  |
+| VrijvervalRioolleiding     | GSL  | Gebruik het supertype (20190430) |
 | Infiltratieriool           | ITR  | (20190430)                       |
 | DIT_riool                  | ITR  | (20240816)                       |
 | VrijvervalTransportleiding | GSL  | Gebruik het supertype (20190430) |
 | OpenLeiding                | OPL  | Gebruik het supertype (20190430) |
 
-Hierbij de opmerking:
-* Voor leidingtypes die in deze tabel ontbreken, wordt de HydX-code GSL gebruikt en wordt een opmerking in het .hydx geplaatst.
+Hierbij enkele opmerkingen:
+* Voor de subtypes van de GWSW-klasse VrijvervalRioolleiding geldt de code van het supertype, met uitzondering van Infiltratieriool en DIT-riool
+* Voor de subtypes van de GWSW-klassen VrijvervalTransportleiding en OpenLeiding geldt de code van het supertype
 
 ### Type inzameling
 Het type Inzameling wordt op basis van het leidingtype afgeleid:
@@ -524,4 +524,4 @@ Voor de SPARQL-kenners, zie ook de queries op
 De omzetting van GWSW-klassen naar Type Kunstwerk is onderdeel van de HydX-coderingen zoals hiervoor beschreven. 
 Zie het blad Domeintabellen in [GWSW.hydx Definitie], in de kolom "LabelElement" staan de klasse-namen uit het GWSW.
 Hierbij de opmerking:
-* Voor de subtypes van de GWSW-klasse Doorlaat wordt de klassenaam Doorlaat gebruikt
+* Voor de subtypes van de GWSW-klasse Doorlaat geldt de code van het supertype
